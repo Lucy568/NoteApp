@@ -14,20 +14,20 @@ import java.util.*
 @CrossOrigin(origins = arrayOf("*"))
 class NoteController {
     val noteDatabase : NoteDatabase = NoteDatabase()
-        @GetMapping("/listnotes")
+        @PostMapping("/listnotes")
         fun listNotes(): MutableList<Note>{
 
             return noteDatabase.notesData()
         }
 
 
-    @GetMapping("/create")
+    @PostMapping("/create")
     fun createNote(@RequestBody note: Note): Note {
         noteDatabase.createNote(note)
         return note
     }
 
-    @GetMapping("/delete")
+    @PostMapping("/delete")
     fun deleteNote( @RequestBody deleteNoteRequest: DeleteNoteRequest):MutableList<Note> {
        return noteDatabase.deleteNote(deleteNoteRequest.id)
     }
