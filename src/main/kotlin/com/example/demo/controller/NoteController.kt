@@ -20,18 +20,18 @@ class NoteController {
             return noteDatabase.notesData()
         }
 
-
+    @CrossOrigin(origins = arrayOf("*"))
     @PostMapping("/create")
     fun createNote(@RequestBody note: Note): Note {
         noteDatabase.createNote(note)
         return note
     }
-
+    @CrossOrigin(origins = arrayOf("*"))
     @PostMapping("/delete")
     fun deleteNote( @RequestBody deleteNoteRequest: DeleteNoteRequest):MutableList<Note> {
        return noteDatabase.deleteNote(deleteNoteRequest.id)
     }
-
+    @CrossOrigin(origins = arrayOf("*"))
     @PostMapping("/update")
     fun updateNote( @RequestBody note: Note): String {
         return noteDatabase.updateNote(editNote = note)
