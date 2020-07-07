@@ -14,7 +14,7 @@ import java.util.*
 @CrossOrigin(origins = arrayOf("*"))
 class NoteController {
     val noteDatabase : NoteDatabase = NoteDatabase()
-        @PostMapping("/listnotes")
+        @GetMapping("/listnotes")
         fun listNotes(): MutableList<Note>{
 
             return noteDatabase.notesData()
