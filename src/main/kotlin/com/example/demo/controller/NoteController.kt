@@ -27,7 +27,7 @@ class NoteController {
         return note
     }
 
-    @PostMapping("/delete")
+    @GetMapping("/delete")
     fun deleteNote( @RequestBody deleteNoteRequest: DeleteNoteRequest):MutableList<Note> {
        return noteDatabase.deleteNote(deleteNoteRequest.id)
     }
