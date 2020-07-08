@@ -27,7 +27,7 @@ class NoteController {
         return note
     }
     @CrossOrigin(origins = arrayOf("*"))
-    @GetMapping("/delete")
+    @PostMapping("/delete")
     fun deleteNote( @RequestBody deleteNoteRequest: DeleteNoteRequest):MutableList<Note> {
        return noteDatabase.deleteNote(deleteNoteRequest.id)
     }
